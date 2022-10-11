@@ -1,0 +1,32 @@
+.offcanvas{
+    max-width: 70%;
+}
+.icon-flipped {
+    transition: 0s;
+    transform: rotate(90deg) !important;
+    -webkit-transfrom:rotate(90deg);
+    -ms-transform:rotate(90deg);
+}
+.menu-text{
+    text-align: left;
+}
+.hidden-btn{
+    padding: 0;
+    width: 100%;
+    border: none;
+    color: inherit !important;
+    background-color: inherit;
+}
+
+.box {
+    height: 10rem;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: all 0.4s ease-in-out;
+}
+.hidden {
+    height: 0;
+}
+.box-input {
+    width: 100%;
+}
