@@ -31,3 +31,23 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### React ###
+/react/node_modules
+/react/pnp
+
+# testing
+/coverage
+
+# production
+/react/build
+
+/react/DS_Store
+/react/env.local
+/react/env.development.local
+/react/env.test.local
+/react/env.production.local
+
+/react/npm-debug.log*
+/react/yarn-debug.log*
+/react/yarn-error.log*
