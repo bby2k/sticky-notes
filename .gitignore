@@ -36,10 +36,8 @@ build/
 /react/node_modules
 /react/pnp
 
-# testing
-/coverage
+/react/coverage
 
-# production
 /react/build
 
 /react/DS_Store
