@@ -1,0 +1,14 @@
+.options-icon {
+    font-size: 2rem;
+}
+.options-board-name {
+    font-size: 1.8rem;
+}
+.options-btn{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 3rem;
+    border: none;
+    color: inherit !important;
+    background-color: inherit;
+}
