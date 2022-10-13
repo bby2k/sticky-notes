@@ -1,6 +1,14 @@
+// React library imports
+import React from "react";
+
+// CSS3 imports
 import './App.css';
-import Header from "./common/header";
+
+//React Components imports
 import Board from "./board";
+import {Header, Notification} from './common'
+import {BoardContext} from "../context/BoardContext";
+
 
 function App() {
   return (
