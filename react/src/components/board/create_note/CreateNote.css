@@ -36,7 +36,6 @@ p.counter {
 textarea.note-create-description {
     background-color: yellow;
     border: none;
-    padding: 1rem;
     resize: none;
     overflow: auto;
     outline: none;
