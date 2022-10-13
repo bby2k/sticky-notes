@@ -1,6 +1,12 @@
-import React from "react";
-import './BoardHeader.css'
+//React library imports
+import React, {useContext} from "react";
+
+//CSS3 imports
+import './BoardHeader.css';
+
+//React Components imports
 import CreateNote from "../create_note";
+import {BoardContext} from "../../../context/BoardContext";
 
 function BoardHeader(){
     return(
