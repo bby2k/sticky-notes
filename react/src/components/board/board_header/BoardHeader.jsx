@@ -22,9 +22,9 @@ function BoardHeader(){
                     }
                     <CreateNote/>
 
-                <div className="col-8 options-board-name">
-                    Magic Board
-                </div>
+                    <div className="col-8 options-board-name">
+                        <p>{shownBoard.name}</p>
+                    </div>
 
                     {shownBoard.permission !== "EDITOR" ? <div className="col-2"></div> :
                         <button className={"options-btn"} type={"button"} id={"edit-board"}>
