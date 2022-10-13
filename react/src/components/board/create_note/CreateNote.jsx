@@ -20,9 +20,13 @@ function CreateNote() {
                     <div className="modal-header">
                         <input className={"note-create-title"} id={"note-title"} type="text" placeholder={"Note title"} maxLength={20}/>
                     </div>
-                    <div className="modal-body">
-                        <textarea className={"note-create-description"} name="test" id="note-content" cols="24" rows="7" maxLength={"150"} onChange={e => setTextAreaCharCount(e.target.value.length)}/>
-                        <p className={"counter"}>{textAreaCharCount}/150</p>
+                    <div>
+                            <div className="modal-body">
+                                <textarea className={"note-create-description"} id={"note-content"} name="test" cols="24" rows="7" maxLength={"150"} onChange={e => setTextAreaCharCount(e.target.value.length)}/>
+                                <button onClick={() => addNoteListener(shownBoard.id)}>Add note</button>
+                                <p className={"counter"}>{textAreaCharCount}/150</p>
+                            </div>
+
                     </div>
                 </div>
             </div>
