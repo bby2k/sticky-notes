@@ -37,10 +37,6 @@ function Board(){
                             </div>
                         )
                     })}
-
-                    {/*<div className="col col-lg-4">*/}
-                    {/*    <Note title={"Working prop"} description={"Working prop"}/>*/}
-                    {/*</div>*/}
                 </div>
             </div>
         </div>
