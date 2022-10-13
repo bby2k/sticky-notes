@@ -9,6 +9,7 @@ import './Board.css'
 import Note from "./note";
 import BoardHeader from "./board_header";
 import Loading from "../common/loading";
+import {BoardContext} from "../../context/BoardContext";
 
 function Board(props){
     let boardId = props.id;
