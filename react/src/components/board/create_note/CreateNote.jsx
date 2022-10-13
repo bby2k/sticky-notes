@@ -1,5 +1,13 @@
-import React from 'react'
+//React library imports
+import React, {useContext} from 'react'
+import axios from "axios";
+
+//CSS3 imports
 import './CreateNote.css'
+
+//React Components imports
+import {BoardContext} from "../../../context/BoardContext";
+import Notification from "../../../hooks";
 
 function CreateNote() {
     const [textAreaCharCount, setTextAreaCharCount] = React.useState(0);
