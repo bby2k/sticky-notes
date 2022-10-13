@@ -29,10 +29,11 @@ function App() {
     let [shownBoard, setShownBoard] = React.useState(welcomeBoard);
   return (
     <div className="App">
-        <div>
+        <BoardContext.Provider value={{shownBoard, setShownBoard}}>
+            <Notification/>
             <Header/>
-        </div>
-        <Board/>
+            <Board/>
+        </BoardContext.Provider>
     </div>
   );
 }
