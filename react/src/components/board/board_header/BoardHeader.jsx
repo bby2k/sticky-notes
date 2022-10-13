@@ -9,6 +9,7 @@ import CreateNote from "../create_note";
 import {BoardContext} from "../../../context/BoardContext";
 
 function BoardHeader(){
+    const {shownBoard} = useContext(BoardContext);
     return(
         <div className={"container options-container"}>
             <div className="row justify-content-center">
