@@ -10,6 +10,7 @@ import {BoardContext} from "../../../context/BoardContext";
 import Notification from "../../../hooks";
 
 function CreateNote() {
+    let {shownBoard} = useContext(BoardContext)
     const [textAreaCharCount, setTextAreaCharCount] = React.useState(0);
 
     return (
