@@ -33,5 +33,57 @@ function CreateNote() {
         </div>
     );
 }
+function addNoteListener(boardID) {
+    let noteTitle = document.getElementById("note-title").value
+    let noteContent = document.getElementById("note-content").value
+
+    let isTitleTextValid = validText(noteTitle)
+    let isContentTextValid = validText(noteContent)
+
+    //Checking if both of the inputs are valid characters, don't accept whitespaces and newlines.
+    if(isTitleTextValid && isContentTextValid){
+        addNote(noteTitle, noteContent, boardID)
+    //If the title text isn't valid but the content text is.
+    } else if (!isTitleTextValid && isContentTextValid){
+        Notification('error', 'Missing text', 'Missing text from note title. You cannot add nameless notes')
+    //If the content text isn't valid but the title text is.
+    } else if (!isContentTextValid && isTitleTextValid){
+        Notification('error', 'Missing text', 'Missing text from note content. You cannot add empty notes.')
+    } else {
+    //If both of the title & content text are incorrect.
+        Notification('error', "Missing text", "Missing text from note title & content. You cannot add nameless or empty notes.");
+    }
+}
+
+function addNote(noteTitle, noteContent, boardID){
+
+
+    axios.post(`/api/note/addNote/${boardID}`, {
+        note: {
+            title:noteTitle,
+            content:noteContent
+        }
+    }).then(function (response){
+        if(response.status === 200){
+            Notification('success',"Note added to board");
+        }
+    }).catch(function (error) {
+        if(error.response){
+            console.log(error);
+            Notification("error", error.message)
+        }
+    })
+}
+
+// Check if the given text only contains whitespace or new line characters
+function validText(text) {
+    if(text.length > 0) {
+        for (let textElement of text) {
+            if(textElement !== '\n' && textElement !== ' ')
+                return true
+        }
+    }
+    return false
+}
 
 export default CreateNote;
