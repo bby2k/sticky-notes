@@ -26,14 +26,15 @@ function BoardHeader(){
                     Magic Board
                 </div>
 
-                <button className={"options-btn"} type={"button"} id={"edit-board"}>
-                    <div className="col-2">
-                        <i className="bi bi-pencil options-icon"></i>
-                    </div>
-                </button>
+                    {shownBoard.permission !== "EDITOR" ? <div className="col-2"></div> :
+                        <button className={"options-btn"} type={"button"} id={"edit-board"}>
+                            <div className="col-2">
+                                <i className="bi bi-pencil options-icon"></i>
+                            </div>
+                        </button>
+                    }
+                </div>
             </div>
-
-        </div>
     );
 }
 
