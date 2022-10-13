@@ -11,13 +11,14 @@ import BoardHeader from "./board_header";
 import Loading from "../common/loading";
 import {BoardContext} from "../../context/BoardContext";
 
-function Board(props){
-    let boardId = props.id;
+function Board(){
+    let currentBoard = useContext(BoardContext)
+    let boardId = currentBoard.id;
+
     let [notes, setNotes] = React.useState([]);
     useEffect(() => {
-        axios(`api/board/${boardId}`)
+        axios.get(`api/board/${boardId}`)
             .then(response => {setNotes(response.data.notes)})
-
     }, [boardId])
 
     return(
