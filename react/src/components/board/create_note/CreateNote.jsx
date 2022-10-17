@@ -18,7 +18,7 @@ function CreateNote() {
             <div className={"modal-dialog"} role={"document"}>
                 <div className={"modal-content"}>
                     <div className="modal-header">
-                        <input className={"note-create-title"} id={"note-title"} type="text" placeholder={"Note title"} maxLength={20}/>
+                        <input className={"note-create-title"} id={"note-title"} type="text" placeholder={"Note title"} maxLength={20} autoComplete={"off"}/>
                     </div>
                     <div>
                             <div className="modal-body">
