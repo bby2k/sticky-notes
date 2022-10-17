@@ -12,28 +12,31 @@ import Loading from "../common/loading";
 import {BoardContext} from "../../context/BoardContext";
 
 function Board(){
-    let currentBoard = useContext(BoardContext)
-    let boardId = currentBoard.id;
+    let [notes, setNotes] = React.useState([{}]);
+    let {shownBoard} = useContext(BoardContext)
 
-    let [notes, setNotes] = React.useState([]);
-    useEffect(() => {
-        axios.get(`api/board/${boardId}`)
-            .then(response => {setNotes(response.data.notes)})
-    }, [boardId])
+    useEffect(()=>{
+        setNotes(shownBoard.notes)
+    }, [shownBoard.notes])
+
+    // useEffect(() => {
+    //     axios.get(`api/board/${boardId}`)
+    //         .then(response => {setNotes(response.data.notes)})
+    // }, [boardId])
 
     return(
         <div>
             <BoardHeader/>
             <div className={"container board"}>
                 <div className={"row justify-content-flex-start"}>
-                    {notes.length === 0?
+                    {notes.length === 0 ?
                         <div className={"board-loading"}>
                             <Loading appearance={"text-light"}/>
                         </div>
                         : notes.map(data => {
                         return(
                             <div className="col col-lg-4">
-                                <Note title={data.title} description={data.description}/>
+                                <Note title={data.title} description={data.message}/>
                             </div>
                         )
                     })}
