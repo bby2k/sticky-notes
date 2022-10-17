@@ -40,11 +40,20 @@ function App() {
     let [shownBoard, setShownBoard] = React.useState(welcomeBoard);
   return (
     <div className="App">
-        <BoardContext.Provider value={{shownBoard, setShownBoard}}>
-            <Notification/>
-            <Header/>
-            <Board/>
-        </BoardContext.Provider>
+        <BrowserRouter>
+            <Routes>
+                <Route path={"/"} element={
+                    <BoardContext.Provider value={{shownBoard, setShownBoard}}>
+                        <Notification/>
+                        <Header/>
+                        <Board/>
+                    </BoardContext.Provider>
+                }/>
+                <Route path={"/login"} element={
+                    <Login/>
+                }/>
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 }
