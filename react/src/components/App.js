@@ -1,5 +1,6 @@
 // React library imports
 import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 // CSS3 imports
 import './App.css';
@@ -8,6 +9,8 @@ import './App.css';
 import Board from "./board";
 import {Header, Notification} from './common'
 import {BoardContext} from "../context/BoardContext";
+
+import {Login} from "./authentication";
 
 
 function App() {
