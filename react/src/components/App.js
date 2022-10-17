@@ -17,17 +17,25 @@ function App() {
     //TODO: This is a temporary test board, it will work dynamically with backend and axios fetching.
     const welcomeBoard = {
         name:"Welcome to Sticky Notes",
-        id:"board id : 1",
+        id:"1",
         permission:"EDITOR",
-        notes:{
-            0:{
-                title:"Working on requests",
-                message:"Still working on request logic with Axios."},
-            1:{
-                title:"Better UX",
-                message:"The main point of this pet project is to be better with react."
+        notes:[{
+                title : "The Project",
+                message : "Sticky Notes is a web application where you can share Board and Notes with other users."
+            },
+            {
+                title : "Current Stack",
+                message : "React, HTML5, CSS3, Git, Bootstrap"
+            },
+            {
+                title : "UX & UI",
+                message : "The main point of this pet project is to get better with React. I wanted to develop this project with a functioning mobile viewport & responsive features."
+            },
+            {
+                title: "Features",
+                message: "Menu, Create-board, Navbar, Responsive Viewport, Notifications, Add-note, Add-board, "
             }
-        }
+        ]
     }
     let [shownBoard, setShownBoard] = React.useState(welcomeBoard);
   return (
