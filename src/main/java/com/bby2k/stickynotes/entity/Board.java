@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.*;
 
 @Getter
@@ -14,6 +14,7 @@ import java.util.*;
 @Entity
 public class Board {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private final UUID id = UUID.randomUUID();
     private String title;
 
@@ -27,8 +28,12 @@ public class Board {
     @JsonIgnore
     private Set<User> joinedUsers = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "notes_in_board")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "board")
+//    @JoinTable(
+//            name = "notes_in_board",
+//            joinColumns = @JoinColumn(name = "board_entity_id"),
+//            inverseJoinColumns = @JoinColumn(name = "note_id")
+//    )
     private Set<Note> notesInBoard = new HashSet<>();
 
     public Board(String title) {
