@@ -1,0 +1,52 @@
+-- DROP TABLE IF EXISTS Users CASCADE ;
+-- DROP TABLE IF EXISTS Boards CASCADE ;
+DROP TABLE IF EXISTS Noteees CASCADE ;
+-- DROP TABLE IF EXISTS Users_Boards CASCADE ;
+
+-- CREATE TABLE Users (
+--     user_id UUID NOT NULL ,
+--     username varchar(255) NOT NULL,
+--     email varchar(255) NOT NULL,
+--     password varchar(255) NOT NULL,
+--     PRIMARY KEY (user_id)
+-- );
+--
+-- CREATE TABLE Boards (
+--     board_id UUID NOT NULL,
+--     title VARCHAR(255) NOT NULL,
+--     user_id UUID NOT NULL,
+--     PRIMARY KEY (board_id),
+--     CONSTRAINT FK_UsersBoard FOREIGN KEY (user_id)
+--         REFERENCES Users(user_id) ON DELETE CASCADE
+-- );
+-- -- ALTER TABLE Boards ADD FOREIGN KEY (creator_id) REFERENCES Users(user_id) ON DELETE CASCADE ;
+--
+-- ;
+-- CREATE TABLE Notes (
+--     note_id UUID PRIMARY KEY ,
+--     title VARCHAR(255) NOT NULL,
+--     content VARCHAR(255) NOT NULL,
+--     board_id UUID NOT NULL,
+--     user_id UUID NOT NULL,
+--     CONSTRAINT FK_NotesBoard FOREIGN KEY (board_id)
+--                    REFERENCES Boards(board_id) ON DELETE CASCADE ,
+--     CONSTRAINT FK_NotesUser FOREIGN KEY (user_id)
+--                    REFERENCES Users(user_id) ON DELETE CASCADE
+-- );
+-- -- ALTER TABLE Notes ADD FOREIGN KEY (board_id) REFERENCES Boards(board_id) ON DELETE CASCADE ;
+--
+-- CREATE TABLE Users_Boards (
+--     user_id UUID NOT NULL,
+--     board_id UUID NOT NULL,
+--     CONSTRAINT FK_UserId FOREIGN KEY (user_id)
+--         REFERENCES Users(user_id) ON DELETE CASCADE ,
+--     CONSTRAINT FK_BoardId FOREIGN KEY (board_id)
+--         REFERENCES Boards(board_id) ON DELETE CASCADE
+-- --     FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE ,
+-- --     FOREIGN KEY (board_id) REFERENCES Boards(board_id) ON DELETE CASCADE
+-- );
+-- -- ALTER TABLE Users_Boards ADD FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ;
+-- -- ALTER TABLE Users_Boards ADD FOREIGN KEY (board_id) REFERENCES Boards(board_id) ON DELETE CASCADE ;
+--
+--
+-- INSERT INTO Users (user_id, username, email, password) VALUES ('51fc711b-21f8-40d1-8a22-88dcaa6eb73e', 'Anton_2000', 'anton2000@gmail.com', 123)
